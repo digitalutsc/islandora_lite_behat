@@ -5,18 +5,18 @@ Integration testing for Islandora Lite using Behat.
 1. Clone and navigate into this repository. You must be able to run Drush from inside this folder.
 2. Run `composer install`.
 3. Setup the Drush driver.
-  - In `config.json`, set `Drupal\DrupalExtension.drush.root` to Drupal's root folder and `Drupal\DrupalExtension.drush.alias` to the Drupal installation's [alias](https://www.drush.org/latest/site-aliases/) in Drush.
-  - Install the [Behat Drush endpoint](https://github.com/drush-ops/behat-drush-endpoint).
+    1. In `config.json`, set `extensions.Drupal\DrupalExtension.drush.root` to Drupal's root folder and `extensions.Drupal\DrupalExtension.drush.alias` to the Drupal installation's [alias](https://www.drush.org/latest/site-aliases/) in Drush.
+    2. Install the [Behat Drush endpoint](https://github.com/drush-ops/behat-drush-endpoint).
 3. In `config.json`, set `extensions.DrevOps\BehatScreenshotExtension.dir` to the directory that screenshots should be stored, and set `extensions.Drupal\MinkExtension.base_url` to the base URL of the Drupal installation.
 4. Install Selenium and Chrome Webdriver. Selenium is only required for tests tagged `@javascript`.
-  a. Download [Selenium Grid](https://www.selenium.dev/downloads/).
-  b. Install Google Chrome:
-  ```
-  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-  sudo dpkg -i google-chrome-stable_current_amd64.deb
-  ```
-  c. Check the version of Chrome using `google-chrome --version`.
-  d. Install the corresponding version of [Chrome Webdriver](https://chromedriver.chromium.org/getting-started).
+    1. Download [Selenium Grid](https://www.selenium.dev/downloads/).
+    2. Install Google Chrome:
+    ```
+    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    sudo dpkg -i google-chrome-stable_current_amd64.deb
+    ```
+    3. Check the version of Chrome using `google-chrome --version`.
+    4. Install the corresponding version of [Chrome Webdriver](https://chromedriver.chromium.org/getting-started).
 5. In `config.json`, set `extensions.Drupal\MinkExtension.selenium2.wd_host` to the Selenium webdriver host URL.
 6. Set environment variable `BEHAT_PARAMS`:
   ```
