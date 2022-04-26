@@ -1,0 +1,18 @@
+{ "extensions": {
+    "DrevOps\\BehatScreenshotExtension": {
+      "dir": "/home/vagrant/islandora/screenshots"
+    },
+    "Drupal\\DrupalExtension": {
+      "drush": {
+        "root": "/var/www/html/drupal",
+        "alias": "self"
+      }
+    },
+    "Drupal\\MinkExtension": {
+      "selenium2": {
+        "wd_host": "http://localhost:4444/wd/hub"
+      },
+      "base_path": "http://localhost:8000"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+default:
+  suites:
+    default:
+      contexts:
+        - FeatureContext
+        - Drupal\DrupalExtension\Context\DrupalContext
+        - Drupal\DrupalExtension\Context\MinkContext
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\MarkupContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - DrevOps\BehatScreenshotExtension\Context\ScreenshotContext
+  extensions:
+    DrevOps\BehatScreenshotExtension:
+    #  dir: /home/vagrant/islandora/screenshots
+    Drupal\MinkExtension:
+      goutte: ~
+      javascript_session: selenium2
+      selenium2:
+        # wd_host: 'http://localhost:4444/wd/hub'
+        capabilities: { "browserName": "chrome", "browser": "chrome", 'chrome': {'switches':['--no-sandbox', '--headless']}}
+      browser_name: 'chrome'
+      # base_url: http://localhost:8000
+      files_path: '%paths.base%/'
+    Drupal\DrupalExtension:
+      blackbox: ~
+      region_map:
+        tabs: '.horizontal-tabs-list'
+        media modal: '.media-library-widget-modal'
+        media footer: '.ui-dialog-buttonpane'
+        content: '#content'
+      api_driver: 'drush'
+      #drush:
+        #alias: 'local'
+        #root: /var/www/html/drupal

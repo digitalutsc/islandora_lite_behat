@@ -1,0 +1,9 @@
+{
+    "config": {
+        "bin-dir": "bin/"
+    },
+    "require-dev": {
+        "drevops/behat-screenshot": "^1.1",
+        "drupal/drupal-extension": "~4.1"
+    }
+}
