@@ -52,3 +52,23 @@ Feature: As an admin
   Then I should see the text "Repository Item Media"
   And I should see the "div" element with the "class" attribute set to "able" in the "content" region
 
+  @api @javascript
+  Scenario: Create Repository Item with Video media.
+  Given I am logged in as a user with the administrator role
+  When I visit "node/add/islandora_object"
+  And I fill in "Title" with "Basic Video Test - Swaying gradient"
+  And I click "Media" in the "tabs" region
+  And I press the "Add media" button
+  And I wait for AJAX to finish
+  And I press "Video" in the "media modal" region
+  And I attach the file "features/files/sample-vid.mp4" to "Add files"
+  And I wait for AJAX to finish
+  And I fill in "Media Use (value 1)" with "Service File" in the "media modal" region
+  And I press "Save" in the "media footer" region
+  And I press "Insert selected" in the "media footer" region
+  And I click "System" in the "tabs" region
+  And I select "Video" from "Model"
+  And I select "AblePlayer Viewer" from "View Mode"
+  And I press the "Save" button
+  Then I should see the text "Repository Item Media"
+  And I should see the "div" element with the "class" attribute set to "able" in the "content" region
