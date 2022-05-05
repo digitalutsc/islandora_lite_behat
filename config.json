@@ -12,7 +12,7 @@
       "selenium2": {
         "wd_host": "http://localhost:4444/wd/hub"
       },
-      "base_path": "http://localhost:8000"
+      "base_url": "http://localhost:8000"
     }
   }
 }
